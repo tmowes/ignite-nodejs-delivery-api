@@ -15,8 +15,4 @@ clientsRoutes.post('/create', createClientController.handle)
 
 clientsRoutes.post('/login', authenticateClientController.handle)
 
-clientsRoutes.get(
-  '/deliveries',
-  ensureAuthenticated,
-  findAllClientDeliveriesController.handle,
-)
+clientsRoutes.get('/deliveries', ensureAuthenticated, findAllClientDeliveriesController.handle)

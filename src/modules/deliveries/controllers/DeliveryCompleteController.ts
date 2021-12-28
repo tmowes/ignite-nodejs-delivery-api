@@ -1,15 +1,15 @@
 import { Response, Request } from 'express'
 import { container } from 'tsyringe'
 
-import { CompleteDeliveryService } from '../services/CompleteDeliveryService'
+import { DeliveryCompleteService } from '../services/DeliveryCompleteService'
 
-export class CompleteDeliveryController {
+export class DeliveryCompleteController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { id: id_deliveryman } = request.user
       const { id_delivery } = request.params
-      const completeDelivery = container.resolve(CompleteDeliveryService)
-      const completedDelivery = await completeDelivery.execute({
+      const deliveryComplete = container.resolve(DeliveryCompleteService)
+      const completedDelivery = await deliveryComplete.execute({
         id_deliveryman,
         id_delivery,
       })

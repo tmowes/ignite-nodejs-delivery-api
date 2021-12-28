@@ -15,8 +15,4 @@ deliverymenRoutes.post('/create', createDeliverymanController.handle)
 
 deliverymenRoutes.post('/login', authenticateDeliverymanController.handle)
 
-deliverymenRoutes.get(
-  '/deliveries',
-  ensureAuthenticated,
-  findAllDelivermanDeliveriesController.handle,
-)
+deliverymenRoutes.get('/deliveries', ensureAuthenticated, findAllDelivermanDeliveriesController.handle)

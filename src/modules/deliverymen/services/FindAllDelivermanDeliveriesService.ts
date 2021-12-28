@@ -12,9 +12,7 @@ export class FindAllDelivermanDeliveriesService {
 
   async execute({
     id_deliveryman,
-  }: FindAllDelivermanDeliveriesDTO): Promise<
-    (Partial<Deliveryman> & { deliveries: Delivery[] })[]
-  > {
+  }: FindAllDelivermanDeliveriesDTO): Promise<(Partial<Deliveryman> & { deliveries: Delivery[] })[]> {
     const allDeliverymanDeliveries = await this.prisma.deliveryman.findMany({
       where: { id: id_deliveryman },
       select: {
